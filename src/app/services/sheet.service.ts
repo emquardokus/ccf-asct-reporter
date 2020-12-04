@@ -468,7 +468,7 @@ export class SheetService {
             if (!bioMarkers.some((b) => b.structure.toLowerCase() === markers[i].trim().toLowerCase())) {
               bioMarkers.push({
                 structure: markers[i].trim(),
-                link:  row[config.marker_col + config.uberon_col] !== markers[i].trim()
+                link:  config.uberon_col !== 0
                 ? row[config.marker_col + (config.uberon_col * (i + 1))] : 'NONE',
                 isNew: row[row.length - 2],
                 color: row[row.length - 1]
