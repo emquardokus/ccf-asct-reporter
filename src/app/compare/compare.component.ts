@@ -7,6 +7,7 @@ import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material/d
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ReportService } from '../report/report.service';
 import {GaService} from '../services/ga.service';
+import { SconfigService } from '../services/sconfig.service';
 
 @Component({
   selector: 'app-compare',
@@ -31,6 +32,7 @@ export class CompareComponent implements OnInit {
     public report: ReportService,
     public fb: FormBuilder,
     public ga: GaService,
+    public sc: SconfigService,
     @Inject(MAT_DIALOG_DATA) public dialogSources: any
   ) {
 
@@ -85,7 +87,7 @@ export class CompareComponent implements OnInit {
       const gid = this.checkLinkFormat(ddSheet.link).gid;
 
 
-      const constructedURL = `https://asctb-data-miner.herokuapp.com/${sheetID}/${gid}`;
+      const constructedURL = `${this.sc.SERVER_URL}/${sheetID}/${gid}`;
       // const constructedURL = `http://localhost:5000/${sheetID}/${gid}`;
 
       const csvData = await this.sheet.getDataFromURL(
