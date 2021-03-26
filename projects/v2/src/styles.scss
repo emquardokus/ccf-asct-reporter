@@ -113,3 +113,17 @@ button:focus {
 ::ng-deep .mat-drawer-backdrop .ng-star-inserted .mat-drawer-shown {
   background-color: green !important;
 }
+
+// @keyframes fade {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// router-outlet + * {
+//   display: block;  /* Change display inline to block */
+//   animation: fade 0.5s;
+// }

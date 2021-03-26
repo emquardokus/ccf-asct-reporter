@@ -10,8 +10,8 @@
 .title2 {
   font-family: "Poppins", sans-serif;
   font-size: 3.125rem;
-  line-height: 3.75rem;
-  font-weight: 600;
+  line-height: 2.75rem;
+  font-weight: 700;
   hyphens: auto;
   letter-spacing: 0.25rem;
 }
@@ -19,7 +19,6 @@
 .desc {
   font-size: 14pt;
   font-weight: 400;
-  color: white;
   line-height: 1.5625rem;
 }
 
@@ -37,10 +36,11 @@ h1 {
 }
 
 .menu-item {
-  transform: all 0.4s;
+  transform: all 0.3s;
   cursor: pointer;
 
   &:hover:not(.bg-light) {
+    transition: all 0.3s;
     background-color: #f2f2f2 !important;
   }
 }
@@ -48,4 +48,23 @@ h1 {
 .bg-light {
   color: #444a65;
   background-color: #e1e1e1 !important;
+}
+
+.nav-height {
+  padding-top: 62px;
+}
+
+.goto {
+  transition: all 0.3s;
+  cursor: pointer;
+  
+  &:hover {
+    color: white;
+    background-color: #444a65;
+  }
+
+  &:active {
+    color: white;
+    background-color: #2e3243;
+  }
 }

@@ -46,6 +46,7 @@ import { DocsComponent } from './modules/docs/docs.component';
 
 import { MarkdownModule } from 'ngx-markdown';
 import { environment } from '../environments/environment';
+import { NavPlaneComponent } from './modules/docs/nav-plane/nav-plane.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { environment } from '../environments/environment';
     LegendComponent,
     PlaygroundComponent,
     NavItemComponent,
-    DocsComponent
+    DocsComponent,
+    NavPlaneComponent
   ],
   imports: [
     BrowserModule,

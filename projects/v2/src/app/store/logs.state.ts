@@ -43,11 +43,11 @@ export class LogsState {
 
     switch (type) {
       case 'MSG':
-        const newLog: LogEntry = { text: message, icon, version };
-        sheetLogs.messages.push(newLog);
+        // const newLog: LogEntry = { text: message, icon, version };
+        // sheetLogs.messages.push(newLog);
 
-        const foundLog = allLogs.find(l => l.id === id);
-        foundLog.messages.push(newLog);
+        // const foundLog = allLogs.find(l => l.id === id);
+        // foundLog.messages.push(newLog);
         break;
 
       case 'NO_OUT_LINKS':

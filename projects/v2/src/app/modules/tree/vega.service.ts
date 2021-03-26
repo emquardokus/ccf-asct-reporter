@@ -18,7 +18,6 @@ import { ReportLog } from '../../actions/logs.actions';
 import { LOG_TYPES, LOG_ICONS } from '../../models/logs.model';
 import { Sheet, SheetConfig } from '../../models/sheet.model';
 import { TNode } from '../../models/tree.model';
-import { Signal } from 'vega';
 
 @Injectable({
   providedIn: 'root'
@@ -38,13 +37,13 @@ export class VegaService {
         .initialize('#vis')
         .hover();
 
-      vegaTooltip(treeView, { theme: 'custom' });
-      treeView.runAsync();
+      // vegaTooltip(treeView, { theme: 'custom' });
+      // treeView.runAsync();
 
-      this.addSignalListeners(treeView);
-      this.store.dispatch(new CloseLoading('Visualization Rendered'));
-      this.store.dispatch(new UpdateLinksData(0, 0, treeView.data('links').length));
-      this.makeBimodal(treeView);
+      // this.addSignalListeners(treeView);
+      // this.store.dispatch(new CloseLoading('Visualization Rendered'));
+      // this.store.dispatch(new UpdateLinksData(0, 0, treeView.data('links').length));
+      // this.makeBimodal(treeView);
 
     } catch (error) {
       console.log(error);
@@ -59,7 +58,7 @@ export class VegaService {
   }
 
   addSignalListeners(view: any) {
-    view.addSignalListener('bimodal_text__click', (signal: Signal, text: any) => {
+    view.addSignalListener('bimodal_text__click', (signal: vega.Signal, text: any) => {
 
       if (Object.entries(text).length) {
         this.store.dispatch(new OpenBottomSheet(text));

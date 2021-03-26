@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DocsService } from '../../services/docs.service';
 import { REGISTRY } from '../../static/docs';
+import { faPhone, faEnvelope, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-docs',
@@ -10,10 +11,14 @@ import { REGISTRY } from '../../static/docs';
 })
 export class DocsComponent implements OnInit {
   window = window;
+  faPhone = faPhone;
+  faEnvelope = faEnvelope;
+  faChevronRight = faChevronRight;
   showHeader = true;
   docsData: string;
   REGISTRY = REGISTRY;
   selected: number;
+  copyrightYear = new Date().getFullYear();
 
   constructor(private router: Router, public activatedRoute: ActivatedRoute, public docsService: DocsService) { }
 
@@ -44,6 +49,10 @@ export class DocsComponent implements OnInit {
         queryParams: {id: idx}, 
         queryParamsHandling: 'merge',
       });
+  }
+
+  onLatest() {
+    this.router.navigate(['/'])
   }
 
   openGithub() {
