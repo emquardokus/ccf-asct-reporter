@@ -1,0 +1,51 @@
+.dark {
+  background-color: #262626;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+}
+
+.title2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.125rem;
+  line-height: 3.75rem;
+  font-weight: 600;
+  hyphens: auto;
+  letter-spacing: 0.25rem;
+}
+
+.desc {
+  font-size: 14pt;
+  font-weight: 400;
+  color: white;
+  line-height: 1.5625rem;
+}
+
+.top-padding {
+  padding-top: 8rem;
+}
+
+.drawer {
+  width: 20rem;
+}
+
+h1 {
+  font-weight: 800 !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.menu-item {
+  transform: all 0.4s;
+  cursor: pointer;
+
+  &:hover:not(.bg-light) {
+    background-color: #f2f2f2 !important;
+  }
+}
+
+.bg-light {
+  color: #444a65;
+  background-color: #e1e1e1 !important;
+}
