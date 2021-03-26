@@ -12,9 +12,9 @@
             />
           </div>
           <div>
-            <a (click)="openData()" class="text-white"> Master Tables </a>
-            <a class (click)="openGithub()" class="ml-4 text-white"> GitHub </a>
-            <a (click)="window.open('https://docs.google.com/spreadsheets/d/1j_SLhFipRWUcRZrCDfNH15OWoiLf7cJks7NVppe3htI/edit#gid=1268820100')" class="text-white ml-4"> Old Tables </a>
+            <a (click)="openData()" class="text-white">Master Tables</a>
+            <a class (click)="openGithub()" class="ml-4 text-white">GitHubz</a>
+            <a (click)="window.open('https://docs.google.com/spreadsheets/d/1j_SLhFipRWUcRZrCDfNH15OWoiLf7cJks7NVppe3htI/edit#gid=1268820100')" class="text-white ml-4">Old Tables</a>
           </div>
         </div>
       </div>
@@ -27,12 +27,12 @@
     </div>
   </div>
   <div class="w-100 h-100 pt-5">
-    <mat-drawer-container class="h-100" >
-      <mat-drawer opened mode="side" class="drawer py-5" position="start">
+    <mat-drawer-container class="h-100 w-100" >
+      <mat-drawer [opened]="true" [mode]="'side'" class="drawer py-5" position="start">
         <div *ngFor="let item of REGISTRY; let i = index;" class="px-5 py-3 menu-item my-2" [class.bg-light]="i === selected" (click)="onChange(i)">
           <h6 class="m-0">{{item.title}}</h6>
         </div>
-      </mat-drawer>
+      </mat-drawer> 
       <div class="h-100 bg-white">
         <div class="p-5">
           <markdown [data]="docsData"></markdown>

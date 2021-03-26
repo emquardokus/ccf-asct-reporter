@@ -45,6 +45,7 @@ import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { DocsComponent } from './modules/docs/docs.component';
 
 import { MarkdownModule } from 'ngx-markdown';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,7 @@ import { MarkdownModule } from 'ngx-markdown';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([SheetState, TreeState, UIState, LogsState]),
+    NgxsModule.forRoot([SheetState, TreeState, UIState, LogsState], {developmentMode: !environment.production}),
     NgxsDataPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
